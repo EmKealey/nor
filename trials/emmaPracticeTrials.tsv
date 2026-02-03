@@ -1,0 +1,5 @@
+list	part	item_id	condition	type	type_id	target_gender	gender_match	orig_item_number	case	animacy	R1	R2	R3	R4	R5	R6	text	question	response_true	response_distractors
+99	adjectives	996	p	practice	99	F	Match	practice1	NA	NA	The dog	in the car	barked loudly	at the man	in the	blue car	The dog in the car barked loudly at the man in the blue car	Did the dog bark?	Yes	No
+99	verbs	997	p	practice	99	M	Mis	practice2	NA	NA	A smart professor	asked me	to help her	correct student	papers	after class	a smart professor asked me to help her correct student papers after class			
+99	pred_adjectives	998	p	practice	99	F	Mis	practice3	NA	NA	Grammatical 	gender	is changing	in	the Norwegian	language	Grammatical gender is changing in the Norwegian language			
+99	num	999	p	practice	99	M	Match	practice4	NA	NA	Two dogs	of unusual	color	were running	along	the path	Two dogs of unusual color were running along the path.	How many animals were there?	Two	One
