@@ -1,2 +1,6 @@
-list	part	item_id	condition	type	type_id	target_gender	gender_match	orig_item_number	case	animacy	R1	R2	R3	R4	R5	R6	text	question	response_true	response_distractors
-4	adjectives	4	a	stim_adj	1	M	Match	0	0	Inanim	У бабушки	старый	пылесос	уже год	плохо	работает	This is list 4 in case you were wondering	Хорошо ли работает у бабушки техника? 	нет	да
+list	part	item_id	condition	type	type_id	target_gender	gender_match	orig_item_number	case	animacy	R1	R2	R3	R4	R5	R6	R7	R8	R9	R10	R11	text	question	response_true	response_distractors
+4	nor	1	indF	a							Mannen	Ble	Lindt	fordi	ei	Gammel	dame	kjørte	sakte	foran	Han	Mannen ble sint fordi ei gammel dame kjørte sakte foran han.			
+	nor	2	defF	b							Kari	Flyttet	Til Leikanger	fordi	den	Lille	bygden	har svært	Gode	skimuligheter.		Kari flyttet til Leikanger fordi den lille bygden har svært gode skimuligheter.	Did you understand that?	No	Yes
+	nor	3	indF	a							den	Unge	gutten	hjalp	Ei	gammel	Dame krysse	veien	på vei	Til	Skole	Den unge gutten hjalp ei gammel dame krysse veien på vei til skole.			
+	nor	4	defF	b							Hele	FAMILIEN	Liker den	lille	bygden	Leikanger	på grunn	av skimulighetene.				Hele familien liker den lille bygden Leikanger på grunn av skimulighetene.	Is this working as expected?	Yes	No 
+	Nor	5	Num	G							Læreren	mente	At	oppgavene	 er tøffe	for	De	yngste	 elevene.			Læreren mente at oppgavene er tøffe/ for de yngste elevene.	Who thinks the assignment is tough?	The teacher	The student

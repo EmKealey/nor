@@ -16,9 +16,9 @@
               <b> University of Southern California Information Sheet:</b>
           </div>
           <p>
-            Hello! My name is Emma Kealey. I am learning about MoTR at the University of Southern California in Los Angeles. Help!
+            Hello! My name is Emma Kealey. I am learning about MoTR at the University of Southern California in Los Angeles. 
             <br><br>
-             This is an example information sheet. Please participate in this study. I need to practice my implementation
+             This is an example information sheet. We would tell you about the study here and about your rights as a participant.
             <br><br>
             Your participation is mostly voluntary.
             <br><br>
@@ -28,7 +28,8 @@
             2.	You are using a computer with a mouse or mouse tracker. <br>
             3.	You promise to be nice to me. 
             <br><br>
-            If you agree to participate, you will read sentences in English (and maybe Spanish?) for 5 minutes. You may also be asked to answer some comprehension questions.
+            If you agree to participate, you will read sentences in English for 2 minutes. Then you will see sentences in Norwegian.
+            You may also be asked to answer some comprehension questions.
             <br><br>
             Upon completion, you will receive a heartfelt thank you from me, Emma Kealey
             <br><br>
@@ -39,7 +40,7 @@
         </div>
         <tr>
           <!-- Explain TurkID -->          
-          <td>Please enter your ProlificID to continue: </td><td><input name="ProlificID" type="text" class="obligatory" v-model="$magpie.measurements.ProlificID"/></td>
+          <td>Please enter a unique ID to continue (will be coded differently for real participants): </td><td><input name="ProlificID" type="text" class="obligatory" v-model="$magpie.measurements.ProlificID"/></td>
         </tr>
         <div v-if="
             $magpie.measurements.ProlificID&&
@@ -151,7 +152,7 @@ When you have finished reading the text, answer the question located at the bott
             </div>
           </template>
           <button v-if="showFirstDiv" style= "bottom:50%; transform: translate(-50%, -50%)" @click="trial.question !== null ? toggleDivs(): saveAndDisable()" :disabled="!hasRead">
-            {{ trial.question !== null ? 'Продолжить' : 'Продолжить' }}
+            {{ trial.question !== null ? 'continue' : 'continue' }}
           </button>
 
           <div v-else style = "position:absolute; bottom:15%; text-align: center; width: 100%; min-width: -webkit-fill-available;" >
@@ -169,7 +170,7 @@ When you have finished reading the text, answer the question located at the bott
           </div>
           
           <button v-if="$magpie.measurements.response" style="transform: translate(-50%, -50%)" @click="toggleDivs(); $magpie.saveAndNextScreen()">
-            Продолжить
+            continue
           </button>
         </Slide>
       </Screen>
@@ -178,34 +179,34 @@ When you have finished reading the text, answer the question located at the bott
 
     <Screen style="min-height: 700px;">
       <div style="background-color: lightgrey; padding: 10px; width: 650px;">
-            <b> демографическая информация </b>
+            <b> demographic information </b>
       </div>
     
-      <p>1. В данный момент я живу в русскоговорящей стране. &nbsp</p>
+      <p>1. Do you currently live in Norway? &nbsp</p>
       <MultipleChoiceInput
           :response.sync= "$magpie.measurements.russianCountry"
           orientation="horizontal"
-          :options="['Да', 'Нет']" />
-      <p v-if = "$magpie.measurements.russianCountry == 'Нет'"> Как долго вы проживаете в нерусскоязычной стране? &nbsp </p>
-      <TextareaInput v-if = "$magpie.measurements.russianCountry == 'Нет'"
+          :options="['yes', 'no']" />
+      <p v-if = "$magpie.measurements.russianCountry == 'no'"> How long has it been since you lived in Norway? &nbsp </p>
+      <TextareaInput v-if = "$magpie.measurements.russianCountry == 'no'"
             :response.sync= "$magpie.measurements.russianCountry2"
       />
       <br>
-      <p>2. Я использую _____.</p>
+      <p>2. I used a _____ to complete this task.</p>
         <MultipleChoiceInput
             :response.sync= "$magpie.measurements.device"
             orientation="horizontal"
-            :options="['Компьютерную мышку', 'Трекпад', 'другое' ]" />
-        <p v-if = "$magpie.measurements.device == 'другое'">Если вы указали другое, пожалуйста уточните: &nbsp &nbsp</p>
-        <TextareaInput v-if = "$magpie.measurements.device == 'другое'"
+            :options="['Computer mouse', 'Trackpad', 'other' ]" />
+        <p v-if = "$magpie.measurements.device == 'other'">If you selected 'other', please specify: &nbsp &nbsp</p>
+        <TextareaInput v-if = "$magpie.measurements.device == 'other'"
               :response.sync= "$magpie.measurements.otherDevice"
         />
         <br>
-      <p>3. Я _____. &nbsp</p>
+      <p>3. I am  _____ &nbsp</p>
         <MultipleChoiceInput
             :response.sync= "$magpie.measurements.hand"
             orientation="horizontal"
-            :options="['Левша', 'Правша', 'Амбидекстр']" />
+            :options="['Left-handed', 'Right-handed', 'Ambidextrous']" />
       <button style= "bottom:0%; transform: translate(-50%, -50%)" @click="$magpie.saveAndNextScreen();">Submit</button>
     </Screen>
 
